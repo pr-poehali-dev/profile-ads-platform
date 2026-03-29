@@ -16,8 +16,8 @@ export default function Footer({ onNavigate }: FooterProps) {
               <svg width="36" height="36" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                   <linearGradient id="footerLogoGrad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stopColor="#f97316"/>
-                    <stop offset="100%" stopColor="#7c3aed"/>
+                    <stop offset="0%" stopColor="#166534"/>
+                    <stop offset="100%" stopColor="#16a34a"/>
                   </linearGradient>
                 </defs>
                 <rect width="40" height="40" rx="11" fill="url(#footerLogoGrad)"/>

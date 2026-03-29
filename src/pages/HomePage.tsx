@@ -22,9 +22,9 @@ export default function HomePage({ onNavigate }: HomePageProps) {
       {/* Hero */}
       <section className="gradient-hero noise-bg relative overflow-hidden">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-orange-500/20 blur-3xl" />
-          <div className="absolute bottom-0 -left-20 w-80 h-80 rounded-full bg-purple-600/20 blur-3xl" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full bg-purple-800/10 blur-3xl" />
+          <div className="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-yellow-400/20 blur-3xl" />
+          <div className="absolute bottom-0 -left-20 w-80 h-80 rounded-full bg-green-400/20 blur-3xl" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full bg-yellow-300/10 blur-3xl" />
         </div>
 
         <div className="container mx-auto px-4 py-16 lg:py-24 relative">
@@ -39,8 +39,8 @@ export default function HomePage({ onNavigate }: HomePageProps) {
               <svg width="52" height="52" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                   <linearGradient id="heroLogoGrad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stopColor="#f97316"/>
-                    <stop offset="100%" stopColor="#7c3aed"/>
+                    <stop offset="0%" stopColor="#166534"/>
+                    <stop offset="100%" stopColor="#16a34a"/>
                   </linearGradient>
                 </defs>
                 <rect width="40" height="40" rx="11" fill="white" opacity="0.15"/>
