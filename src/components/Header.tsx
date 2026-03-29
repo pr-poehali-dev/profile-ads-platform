@@ -28,14 +28,30 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
           {/* Logo */}
           <button
             onClick={() => onNavigate("home")}
-            className="flex items-center gap-2 shrink-0"
+            className="flex items-center gap-2.5 shrink-0 group"
           >
-            <div className="w-9 h-9 rounded-xl gradient-brand flex items-center justify-center shadow-md">
-              <span className="text-white font-oswald font-bold text-lg leading-none">П</span>
+            {/* Logo mark */}
+            <div className="relative w-10 h-10 shrink-0">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="logoGrad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stopColor="#f97316"/>
+                    <stop offset="100%" stopColor="#7c3aed"/>
+                  </linearGradient>
+                </defs>
+                {/* Rounded square bg */}
+                <rect width="40" height="40" rx="11" fill="url(#logoGrad)"/>
+                {/* Pin shape: circle + drop */}
+                <circle cx="20" cy="16" r="5.5" fill="white"/>
+                <path d="M20 21.5 C20 21.5 14 27 14 31 C14 33.2 16.7 34.5 20 34.5 C23.3 34.5 26 33.2 26 31 C26 27 20 21.5 20 21.5Z" fill="white" opacity="0.35"/>
+                {/* Inner dot */}
+                <circle cx="20" cy="16" r="2.5" fill="url(#logoGrad)"/>
+              </svg>
             </div>
-            <div className="hidden sm:block">
-              <span className="font-oswald font-bold text-xl gradient-brand-text leading-none block">ПРОФАЙЛ</span>
-              <span className="text-xs text-muted-foreground leading-none">Иркутская область</span>
+            {/* Wordmark */}
+            <div className="hidden sm:flex flex-col leading-none">
+              <span className="font-oswald font-bold text-[22px] tracking-wide gradient-brand-text leading-none">ПРОФАЙЛ</span>
+              <span className="text-[10px] text-muted-foreground tracking-widest uppercase mt-0.5 font-medium">Иркутская область</span>
             </div>
           </button>
 

@@ -34,10 +34,22 @@ export default function HomePage({ onNavigate }: HomePageProps) {
               <span className="text-white/80 text-sm">Иркутская область</span>
             </div>
 
-            <h1 className="font-oswald text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4 animate-fade-in stagger-1">
-              ДОСКА ОБЪЯВЛЕНИЙ{" "}
-              <span className="gradient-brand-text">ПРОФАЙЛ</span>
-            </h1>
+            {/* Hero logo wordmark */}
+            <div className="flex items-center justify-center gap-4 mb-5 animate-fade-in stagger-1">
+              <svg width="52" height="52" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="heroLogoGrad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stopColor="#f97316"/>
+                    <stop offset="100%" stopColor="#7c3aed"/>
+                  </linearGradient>
+                </defs>
+                <rect width="40" height="40" rx="11" fill="url(#heroLogoGrad)"/>
+                <circle cx="20" cy="16" r="5.5" fill="white"/>
+                <path d="M20 21.5 C20 21.5 14 27 14 31 C14 33.2 16.7 34.5 20 34.5 C23.3 34.5 26 33.2 26 31 C26 27 20 21.5 20 21.5Z" fill="white" opacity="0.35"/>
+                <circle cx="20" cy="16" r="2.5" fill="url(#heroLogoGrad)"/>
+              </svg>
+              <span className="font-oswald font-bold text-5xl sm:text-6xl text-white tracking-wide leading-none">ПРОФАЙЛ</span>
+            </div>
             <p className="text-white/70 text-lg mb-8 animate-fade-in stagger-2">
               Продавайте, покупайте, ищите работу и обменивайтесь — всё в одном месте для жителей Иркутской области
             </p>
