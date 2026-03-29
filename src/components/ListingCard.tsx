@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Listing } from "@/data/listings";
 import Icon from "@/components/ui/icon";
+import CoinRating from "@/components/CoinRating";
 
 const CATEGORY_LABELS: Record<string, string> = {
   electronics: "Электроника",
@@ -88,11 +89,19 @@ export default function ListingCard({ listing }: ListingCardProps) {
         </div>
         <div className="flex items-center justify-between mt-2 text-xs text-muted-foreground">
           <span className="flex items-center gap-1">
-            <Icon name="MapPin" size={11} className="text-orange-400" />
+            <Icon name="MapPin" size={11} className="text-green-600" />
             {listing.location}
           </span>
           <span>{listing.date}</span>
         </div>
+
+        {/* Seller + rating */}
+        {listing.sellerRating && (
+          <div className="flex items-center justify-between mt-2.5 pt-2.5 border-t border-border">
+            <span className="text-xs text-muted-foreground truncate max-w-[100px]">{listing.seller}</span>
+            <CoinRating rating={listing.sellerRating} size="sm" showLabel />
+          </div>
+        )}
       </div>
     </div>
   );

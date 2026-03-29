@@ -14,6 +14,7 @@ export interface Listing {
   isUrgent?: boolean;
   description: string;
   seller: string;
+  sellerRating?: number;
   views: number;
 }
 
@@ -69,6 +70,7 @@ export const LISTINGS: Listing[] = [
     isNew: true,
     description: "Продаю iPhone 14 Pro 256GB, цвет Space Black. Полная комплектация, все работает идеально.",
     seller: "Максим К.",
+    sellerRating: 5,
     views: 234,
   },
   {
@@ -83,6 +85,7 @@ export const LISTINGS: Listing[] = [
     isUrgent: true,
     description: "Угловой диван в хорошем состоянии, светло-серый. Самовывоз.",
     seller: "Ольга М.",
+    sellerRating: 4,
     views: 87,
   },
   {
@@ -96,6 +99,7 @@ export const LISTINGS: Listing[] = [
     isFavorite: false,
     description: "Тёплая куртка, носилась один сезон. Без дефектов.",
     seller: "Андрей Л.",
+    sellerRating: 3,
     views: 56,
   },
   {
@@ -110,6 +114,7 @@ export const LISTINGS: Listing[] = [
     isNew: true,
     description: "Один владелец, не бита, не крашена. Полная комплектация.",
     seller: "Сергей В.",
+    sellerRating: 5,
     views: 512,
   },
   {
@@ -123,6 +128,7 @@ export const LISTINGS: Listing[] = [
     isFavorite: false,
     description: "Intel Core i5, 16GB RAM, 512 SSD. В отличном состоянии.",
     seller: "Наталья П.",
+    sellerRating: 4,
     views: 143,
   },
   {
@@ -137,6 +143,7 @@ export const LISTINGS: Listing[] = [
     isUrgent: true,
     description: "Дубовый письменный стол 160x80 см. Без повреждений.",
     seller: "Иван Ф.",
+    sellerRating: 3,
     views: 67,
   },
   {
@@ -151,6 +158,7 @@ export const LISTINGS: Listing[] = [
     isNew: true,
     description: "PS5 в комплекте с Spider-Man 2, FIFA 24 и GOW Ragnarök.",
     seller: "Дмитрий С.",
+    sellerRating: 5,
     views: 387,
   },
   {
@@ -164,6 +172,7 @@ export const LISTINGS: Listing[] = [
     isFavorite: true,
     description: "Оригинальные Nike Air Max 270, носились мало.",
     seller: "Алина Д.",
+    sellerRating: 4,
     views: 92,
   },
 ];
