@@ -13,6 +13,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AuthModal from "@/components/AuthModal";
 import AdminPage from "@/pages/AdminPage";
+import InstallPWABanner from "@/components/InstallPWABanner";
 
 export type Page = "home" | "catalog" | "vacancies" | "lost" | "saved" | "profile" | "support" | "seller" | "admin";
 
@@ -69,6 +70,7 @@ export default function App() {
           onLogin={handleLogin}
         />
       )}
+      <InstallPWABanner />
     </TooltipProvider>
   );
 }
