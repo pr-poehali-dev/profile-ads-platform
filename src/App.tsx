@@ -12,8 +12,9 @@ import SellerPage from "@/pages/SellerPage";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AuthModal from "@/components/AuthModal";
+import AdminPage from "@/pages/AdminPage";
 
-export type Page = "home" | "catalog" | "vacancies" | "lost" | "saved" | "profile" | "support" | "seller";
+export type Page = "home" | "catalog" | "vacancies" | "lost" | "saved" | "profile" | "support" | "seller" | "admin";
 
 export interface User {
   name: string;
@@ -42,6 +43,7 @@ export default function App() {
       case "profile": return <ProfilePage onNavigate={setCurrentPage} user={user} onLogout={handleLogout} />;
       case "support": return <SupportPage />;
       case "seller": return <SellerPage onNavigate={setCurrentPage} />;
+      case "admin": return <AdminPage />;
       default: return <HomePage onNavigate={setCurrentPage} />;
     }
   };

@@ -1,7 +1,20 @@
+import { useState, useEffect } from "react";
 import { Page } from "@/App";
 import { LISTINGS, CATEGORIES } from "@/data/listings";
 import ListingCard from "@/components/ListingCard";
 import Icon from "@/components/ui/icon";
+import AdRequestModal from "@/components/AdRequestModal";
+
+const AD_BANNERS_URL = "https://functions.poehali.dev/35905cb1-28ca-4992-aa49-ac10ddaa9758";
+
+interface AdBanner {
+  id: number;
+  slot: number;
+  advertiser_name: string | null;
+  link_url: string | null;
+  image_url: string | null;
+  is_active: boolean;
+}
 
 interface HomePageProps {
   onNavigate: (page: Page) => void;
@@ -16,6 +29,15 @@ const STATS = [
 
 export default function HomePage({ onNavigate }: HomePageProps) {
   const recentListings = LISTINGS.slice(0, 8);
+  const [banners, setBanners] = useState<AdBanner[]>([]);
+  const [showAdModal, setShowAdModal] = useState(false);
+
+  useEffect(() => {
+    fetch(AD_BANNERS_URL)
+      .then((r) => r.json())
+      .then((d) => setBanners(d.banners || []))
+      .catch(() => {});
+  }, []);
 
   return (
     <div>
@@ -95,17 +117,33 @@ export default function HomePage({ onNavigate }: HomePageProps) {
         <div className="relative mt-4 pb-6">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-              {[1, 2, 3, 4].map((i) => (
-                <div
-                  key={i}
-                  className="flex items-center justify-center h-24 rounded-xl border border-white/20 bg-white/10 backdrop-blur-sm text-white/50 text-sm font-medium cursor-pointer hover:bg-white/15 transition-colors select-none"
-                >
-                  Здесь могла бы быть ваша реклама
-                </div>
-              ))}
+              {[1, 2, 3, 4].map((slot) => {
+                const banner = banners.find((b) => b.slot === slot && b.is_active);
+                return banner ? (
+                  <a
+                    key={slot}
+                    href={banner.link_url || "#"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block h-24 rounded-xl overflow-hidden border border-white/20 hover:scale-[1.02] transition-transform"
+                  >
+                    <img src={banner.image_url!} alt={banner.advertiser_name || "Реклама"} className="w-full h-full object-cover" />
+                  </a>
+                ) : (
+                  <button
+                    key={slot}
+                    onClick={() => setShowAdModal(true)}
+                    className="flex items-center justify-center h-24 rounded-xl border border-white/20 bg-white/10 backdrop-blur-sm text-white/50 text-sm font-medium hover:bg-white/15 transition-colors"
+                  >
+                    Здесь могла бы быть ваша реклама
+                  </button>
+                );
+              })}
             </div>
           </div>
         </div>
+
+        {showAdModal && <AdRequestModal onClose={() => setShowAdModal(false)} />}
       </section>
 
       {/* Stats */}

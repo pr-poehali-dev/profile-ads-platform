@@ -108,6 +108,10 @@ export default function Footer({ onNavigate }: FooterProps) {
           <div className="flex items-center gap-4 text-xs text-gray-500">
             <button className="hover:text-gray-300 transition-colors">Политика конфиденциальности</button>
             <button className="hover:text-gray-300 transition-colors">Правила использования</button>
+            <button onClick={() => onNavigate("admin")} className="hover:text-orange-400 transition-colors flex items-center gap-1">
+              <Icon name="ShieldCheck" size={12} />
+              Для администратора
+            </button>
           </div>
         </div>
       </div>
