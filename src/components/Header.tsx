@@ -30,7 +30,7 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
             onClick={() => onNavigate("home")}
             className="flex items-center gap-2.5 shrink-0 group"
           >
-            {/* Logo mark */}
+            {/* Logo mark — П монограмма */}
             <div className="relative w-10 h-10 shrink-0">
               <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
@@ -39,13 +39,13 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
                     <stop offset="100%" stopColor="#7c3aed"/>
                   </linearGradient>
                 </defs>
-                {/* Rounded square bg */}
                 <rect width="40" height="40" rx="11" fill="url(#logoGrad)"/>
-                {/* Pin shape: circle + drop */}
-                <circle cx="20" cy="16" r="5.5" fill="white"/>
-                <path d="M20 21.5 C20 21.5 14 27 14 31 C14 33.2 16.7 34.5 20 34.5 C23.3 34.5 26 33.2 26 31 C26 27 20 21.5 20 21.5Z" fill="white" opacity="0.35"/>
-                {/* Inner dot */}
-                <circle cx="20" cy="16" r="2.5" fill="url(#logoGrad)"/>
+                {/* П — горизонтальная перекладина */}
+                <rect x="9" y="10" width="22" height="4.5" rx="2.25" fill="white"/>
+                {/* Левая стойка */}
+                <rect x="9" y="10" width="5" height="20" rx="2.5" fill="white"/>
+                {/* Правая стойка */}
+                <rect x="26" y="10" width="5" height="20" rx="2.5" fill="white"/>
               </svg>
             </div>
             {/* Wordmark */}

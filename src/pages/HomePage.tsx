@@ -43,10 +43,10 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                     <stop offset="100%" stopColor="#7c3aed"/>
                   </linearGradient>
                 </defs>
-                <rect width="40" height="40" rx="11" fill="url(#heroLogoGrad)"/>
-                <circle cx="20" cy="16" r="5.5" fill="white"/>
-                <path d="M20 21.5 C20 21.5 14 27 14 31 C14 33.2 16.7 34.5 20 34.5 C23.3 34.5 26 33.2 26 31 C26 27 20 21.5 20 21.5Z" fill="white" opacity="0.35"/>
-                <circle cx="20" cy="16" r="2.5" fill="url(#heroLogoGrad)"/>
+                <rect width="40" height="40" rx="11" fill="white" opacity="0.15"/>
+                <rect x="9" y="10" width="22" height="4.5" rx="2.25" fill="white"/>
+                <rect x="9" y="10" width="5" height="20" rx="2.5" fill="white"/>
+                <rect x="26" y="10" width="5" height="20" rx="2.5" fill="white"/>
               </svg>
               <span className="font-oswald font-bold text-5xl sm:text-6xl text-white tracking-wide leading-none">ПРОФАЙЛ</span>
             </div>
