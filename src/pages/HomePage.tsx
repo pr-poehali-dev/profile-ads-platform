@@ -91,14 +91,20 @@ export default function HomePage({ onNavigate }: HomePageProps) {
           </div>
         </div>
 
-        {/* Hero image strip */}
-        <div className="relative h-48 mt-4 overflow-hidden">
-          <img
-            src="https://cdn.poehali.dev/projects/3ac61a67-957b-4eea-9bad-bb8823ae7707/files/09d1447c-75e2-4a5c-8476-36750fa330fd.jpg"
-            alt="Профайл — доска объявлений"
-            className="w-full h-full object-cover opacity-40"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent" />
+        {/* Ad banners strip */}
+        <div className="relative mt-4 pb-6">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+              {[1, 2, 3, 4].map((i) => (
+                <div
+                  key={i}
+                  className="flex items-center justify-center h-24 rounded-xl border border-white/20 bg-white/10 backdrop-blur-sm text-white/50 text-sm font-medium cursor-pointer hover:bg-white/15 transition-colors select-none"
+                >
+                  Здесь могла бы быть ваша реклама
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
