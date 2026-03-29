@@ -31,7 +31,7 @@ export default function CatalogPage({ onNavigate }: { onNavigate?: (page: import
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4">
             {filtered.map((listing, i) => (
               <div key={listing.id} style={{ animationDelay: `${i * 0.05}s` }}>
-                <ListingCard listing={listing} />
+                <ListingCard listing={listing} onSellerClick={() => onNavigate?.("seller")} />
               </div>
             ))}
           </div>

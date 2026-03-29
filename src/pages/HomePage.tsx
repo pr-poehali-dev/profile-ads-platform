@@ -149,7 +149,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
           {recentListings.map((listing, i) => (
             <div key={listing.id} style={{ animationDelay: `${i * 0.07}s` }}>
-              <ListingCard listing={listing} />
+              <ListingCard listing={listing} onSellerClick={() => onNavigate("seller")} />
             </div>
           ))}
         </div>

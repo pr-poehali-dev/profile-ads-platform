@@ -27,9 +27,10 @@ const CATEGORY_COLORS: Record<string, string> = {
 
 interface ListingCardProps {
   listing: Listing;
+  onSellerClick?: () => void;
 }
 
-export default function ListingCard({ listing }: ListingCardProps) {
+export default function ListingCard({ listing, onSellerClick }: ListingCardProps) {
   const [fav, setFav] = useState(listing.isFavorite);
 
   const formatPrice = (price: number) => {
@@ -98,7 +99,15 @@ export default function ListingCard({ listing }: ListingCardProps) {
         {/* Seller + rating */}
         {listing.sellerRating && (
           <div className="flex items-center justify-between mt-2.5 pt-2.5 border-t border-border">
-            <span className="text-xs text-muted-foreground truncate max-w-[100px]">{listing.seller}</span>
+            <button
+              onClick={e => { e.stopPropagation(); onSellerClick?.(); }}
+              className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-green-700 transition-colors group/seller"
+            >
+              <div className="w-5 h-5 rounded-full gradient-brand flex items-center justify-center shrink-0">
+                <span className="text-white text-[9px] font-bold">{listing.seller[0]}</span>
+              </div>
+              <span className="truncate max-w-[80px] group-hover/seller:underline underline-offset-2">{listing.seller}</span>
+            </button>
             <CoinRating rating={listing.sellerRating} size="sm" showLabel />
           </div>
         )}
