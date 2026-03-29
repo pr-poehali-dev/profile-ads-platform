@@ -4,7 +4,7 @@ import ListingCard from "@/components/ListingCard";
 import FilterBar from "@/components/FilterBar";
 import Icon from "@/components/ui/icon";
 
-export default function CatalogPage() {
+export default function CatalogPage({ onNavigate }: { onNavigate?: (page: import("@/App").Page) => void }) {
   const [activeCategory, setActiveCategory] = useState("all");
 
   const filtered = activeCategory === "all"

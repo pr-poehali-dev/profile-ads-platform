@@ -1,10 +1,13 @@
 import { useState } from "react";
-import { Page } from "@/App";
+import { Page, User } from "@/App";
 import { LISTINGS } from "@/data/listings";
+import CoinRating from "@/components/CoinRating";
 import Icon from "@/components/ui/icon";
 
 interface ProfilePageProps {
   onNavigate: (page: Page) => void;
+  user: User | null;
+  onLogout: () => void;
 }
 
 const TABS = [
@@ -13,9 +16,11 @@ const TABS = [
   { id: "notifications", label: "Уведомления", icon: "Bell" },
 ];
 
-export default function ProfilePage({ onNavigate }: ProfilePageProps) {
+export default function ProfilePage({ onNavigate, user, onLogout }: ProfilePageProps) {
   const [activeTab, setActiveTab] = useState("listings");
   const myListings = LISTINGS.slice(0, 4);
+  const displayName = user?.name || "Алексей Петров";
+  const initials = displayName.split(" ").map((w: string) => w[0]).join("").toUpperCase().slice(0, 2);
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -24,7 +29,7 @@ export default function ProfilePage({ onNavigate }: ProfilePageProps) {
         <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5">
           <div className="relative">
             <div className="w-20 h-20 gradient-brand rounded-2xl flex items-center justify-center shadow-lg">
-              <span className="font-oswald font-bold text-4xl text-white">А</span>
+              <span className="font-oswald font-bold text-4xl text-white">{initials}</span>
             </div>
             <button className="absolute -bottom-1 -right-1 w-7 h-7 bg-white border border-border rounded-full flex items-center justify-center shadow-sm hover:bg-muted transition-colors">
               <Icon name="Camera" size={13} className="text-muted-foreground" />
@@ -32,20 +37,21 @@ export default function ProfilePage({ onNavigate }: ProfilePageProps) {
           </div>
 
           <div className="flex-1 text-center sm:text-left">
-            <h1 className="font-oswald font-bold text-2xl text-foreground">Алексей Петров</h1>
+            <h1 className="font-oswald font-bold text-2xl text-foreground">{displayName}</h1>
             <p className="text-muted-foreground text-sm mt-0.5 flex items-center gap-1.5 justify-center sm:justify-start">
-              <Icon name="MapPin" size={13} className="text-orange-400" />
+              <Icon name="MapPin" size={13} className="text-green-600" />
               Иркутск
             </p>
-            <div className="flex items-center gap-4 mt-3 justify-center sm:justify-start">
-              <div className="flex items-center gap-1.5">
-                <Icon name="Star" size={15} className="text-yellow-400 fill-yellow-400" />
-                <span className="font-semibold text-sm">4.8</span>
-                <span className="text-xs text-muted-foreground">(24 отзыва)</span>
+            <div className="flex items-center gap-4 mt-3 justify-center sm:justify-start flex-wrap">
+              <div className="flex items-center gap-2">
+                <CoinRating rating={5} size="sm" />
+                <span className="font-semibold text-sm text-amber-600">4.8</span>
+                <button
+                  onClick={() => onNavigate("seller")}
+                  className="text-xs text-muted-foreground hover:text-green-600 transition-colors"
+                >(24 отзыва)</button>
               </div>
-              <div className="text-xs text-muted-foreground">
-                На сайте с марта 2024
-              </div>
+              <div className="text-xs text-muted-foreground">На сайте с марта 2024</div>
             </div>
           </div>
 
@@ -53,6 +59,13 @@ export default function ProfilePage({ onNavigate }: ProfilePageProps) {
             <button className="gradient-brand text-white font-semibold px-5 py-2.5 rounded-xl hover:opacity-90 transition-opacity text-sm flex items-center gap-2">
               <Icon name="Plus" size={16} />
               Подать объявление
+            </button>
+            <button
+              onClick={onLogout}
+              className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-red-500 transition-colors"
+            >
+              <Icon name="LogOut" size={13} />
+              Выйти из аккаунта
             </button>
             <div className="flex items-center gap-3 text-sm">
               <div className="text-center">

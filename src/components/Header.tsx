@@ -1,10 +1,12 @@
 import { useState } from "react";
-import { Page } from "@/App";
+import { Page, User } from "@/App";
 import Icon from "@/components/ui/icon";
 
 interface HeaderProps {
   currentPage: Page;
   onNavigate: (page: Page) => void;
+  user: User | null;
+  onOpenAuth: () => void;
 }
 
 const NAV_ITEMS: { id: Page; label: string; icon: string }[] = [
@@ -16,9 +18,13 @@ const NAV_ITEMS: { id: Page; label: string; icon: string }[] = [
   { id: "support", label: "Поддержка", icon: "LifeBuoy" },
 ];
 
-export default function Header({ currentPage, onNavigate }: HeaderProps) {
+export default function Header({ currentPage, onNavigate, user, onOpenAuth }: HeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchVal, setSearchVal] = useState("");
+
+  const initials = user?.name
+    ? user.name.split(" ").map(w => w[0]).join("").toUpperCase().slice(0, 2)
+    : "";
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-border shadow-sm">
@@ -30,7 +36,6 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
             onClick={() => onNavigate("home")}
             className="flex items-center gap-2.5 shrink-0 group"
           >
-            {/* Logo mark — П монограмма */}
             <div className="relative w-10 h-10 shrink-0">
               <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
@@ -40,15 +45,11 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
                   </linearGradient>
                 </defs>
                 <rect width="40" height="40" rx="11" fill="url(#logoGrad)"/>
-                {/* П — горизонтальная перекладина */}
                 <rect x="9" y="10" width="22" height="4.5" rx="2.25" fill="white"/>
-                {/* Левая стойка */}
                 <rect x="9" y="10" width="5" height="20" rx="2.5" fill="white"/>
-                {/* Правая стойка */}
                 <rect x="26" y="10" width="5" height="20" rx="2.5" fill="white"/>
               </svg>
             </div>
-            {/* Wordmark */}
             <div className="hidden sm:flex flex-col leading-none">
               <span className="font-oswald font-bold text-[22px] tracking-wide gradient-brand-text leading-none">ПРОФАЙЛ</span>
               <span className="text-[10px] text-muted-foreground tracking-widest uppercase mt-0.5 font-medium">Иркутская область</span>
@@ -62,7 +63,7 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
               value={searchVal}
               onChange={e => setSearchVal(e.target.value)}
               placeholder="Поиск объявлений..."
-              className="w-full pl-9 pr-4 py-2.5 rounded-xl border border-border bg-muted/40 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400/40 focus:border-orange-400 transition-all"
+              className="w-full pl-9 pr-4 py-2.5 rounded-xl border border-border bg-muted/40 text-sm focus:outline-none focus:ring-2 focus:ring-green-500/30 focus:border-green-600 transition-all"
             />
           </div>
 
@@ -76,19 +77,35 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
               <Icon name="Heart" size={20} className="text-muted-foreground" />
               <span className="absolute -top-0.5 -right-0.5 w-4 h-4 gradient-brand rounded-full text-white text-[9px] flex items-center justify-center font-bold">3</span>
             </button>
-            <button
-              onClick={() => onNavigate("profile")}
-              className="flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-muted transition-colors"
-            >
-              <div className="w-7 h-7 rounded-full gradient-brand flex items-center justify-center">
-                <span className="text-white text-xs font-bold">А</span>
-              </div>
-              <span className="hidden sm:block text-sm font-medium text-foreground">Кабинет</span>
-            </button>
+
+            {user ? (
+              /* Авторизован */
+              <button
+                onClick={() => onNavigate("profile")}
+                className="flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-muted transition-colors"
+              >
+                <div className="w-8 h-8 rounded-full gradient-brand flex items-center justify-center shadow-sm">
+                  <span className="text-white text-xs font-bold">{initials}</span>
+                </div>
+                <span className="hidden sm:block text-sm font-medium text-foreground max-w-[90px] truncate">{user.name}</span>
+                <Icon name="ChevronDown" size={14} className="hidden sm:block text-muted-foreground" />
+              </button>
+            ) : (
+              /* Гость */
+              <button
+                onClick={onOpenAuth}
+                className="flex items-center gap-2 px-3 py-2 rounded-xl border border-border hover:bg-muted transition-colors text-sm font-semibold text-foreground"
+              >
+                <Icon name="LogIn" size={16} className="text-green-600" />
+                <span className="hidden sm:block">Войти</span>
+              </button>
+            )}
+
             <button className="gradient-brand text-white text-sm font-semibold px-4 py-2 rounded-xl hover:opacity-90 transition-opacity hidden sm:flex items-center gap-1.5 shadow-md">
               <Icon name="Plus" size={15} />
               Подать объявление
             </button>
+
             {/* Burger */}
             <button
               className="sm:hidden p-2 rounded-xl hover:bg-muted transition-colors"
@@ -107,7 +124,7 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
               onClick={() => onNavigate(item.id)}
               className={`nav-link flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm transition-colors ${
                 currentPage === item.id
-                  ? "active text-orange-500 bg-orange-50"
+                  ? "active text-green-700 bg-green-50"
                   : "text-muted-foreground hover:text-foreground hover:bg-muted/60"
               }`}
             >
@@ -116,7 +133,7 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
             </button>
           ))}
           <div className="ml-auto flex items-center gap-2 text-xs text-muted-foreground">
-            <Icon name="MapPin" size={13} className="text-orange-400" />
+            <Icon name="MapPin" size={13} className="text-green-600" />
             <span>Иркутская область</span>
           </div>
         </nav>
@@ -140,7 +157,26 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
                 {item.label}
               </button>
             ))}
-            <button className="mt-2 gradient-brand text-white font-semibold py-3 rounded-xl flex items-center justify-center gap-2">
+            {user ? (
+              <button
+                onClick={() => { onNavigate("profile"); setMobileOpen(false); }}
+                className="mt-2 flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium hover:bg-muted"
+              >
+                <div className="w-7 h-7 rounded-full gradient-brand flex items-center justify-center">
+                  <span className="text-white text-xs font-bold">{initials}</span>
+                </div>
+                {user.name}
+              </button>
+            ) : (
+              <button
+                onClick={() => { setMobileOpen(false); setTimeout(() => (document.querySelector("[data-auth-trigger]") as HTMLElement)?.click(), 100); }}
+                className="mt-2 flex items-center justify-center gap-2 border border-green-600 text-green-700 font-semibold py-3 rounded-xl hover:bg-green-50 transition-colors"
+              >
+                <Icon name="LogIn" size={16} />
+                Войти / Зарегистрироваться
+              </button>
+            )}
+            <button className="gradient-brand text-white font-semibold py-3 rounded-xl flex items-center justify-center gap-2 mt-1">
               <Icon name="Plus" size={16} />
               Подать объявление
             </button>
