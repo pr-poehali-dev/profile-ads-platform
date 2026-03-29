@@ -22,9 +22,12 @@ export default function HomePage({ onNavigate }: HomePageProps) {
       {/* Hero */}
       <section className="gradient-hero noise-bg relative overflow-hidden">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-yellow-400/20 blur-3xl" />
-          <div className="absolute bottom-0 -left-20 w-80 h-80 rounded-full bg-green-400/20 blur-3xl" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full bg-yellow-300/10 blur-3xl" />
+          <img
+            src="https://cdn.poehali.dev/projects/3ac61a67-957b-4eea-9bad-bb8823ae7707/files/193dfb48-a812-4bb3-a7d0-0c616780c845.jpg"
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover opacity-40"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0d2b1a]/80 via-transparent to-[#0d2b1a]/30" />
         </div>
 
         <div className="container mx-auto px-4 py-16 lg:py-24 relative">
