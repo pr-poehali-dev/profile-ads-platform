@@ -23,7 +23,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
       <section className="gradient-hero noise-bg relative overflow-hidden">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <img
-            src="https://cdn.poehali.dev/projects/3ac61a67-957b-4eea-9bad-bb8823ae7707/files/6932d94d-b600-4301-9fb4-1cb43a25a8bf.jpg"
+            src="https://cdn.poehali.dev/projects/3ac61a67-957b-4eea-9bad-bb8823ae7707/files/50f6b1fc-8a7f-47e2-a527-fc70847ddeff.jpg"
             alt=""
             className="absolute inset-0 w-full h-full object-cover opacity-60"
           />
