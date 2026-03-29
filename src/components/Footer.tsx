@@ -12,10 +12,19 @@ export default function Footer({ onNavigate }: FooterProps) {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 rounded-xl gradient-brand flex items-center justify-center">
-                <span className="text-white font-oswald font-bold text-lg">П</span>
-              </div>
+            <div className="flex items-center gap-2.5 mb-4">
+              <svg width="36" height="36" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="footerLogoGrad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stopColor="#f97316"/>
+                    <stop offset="100%" stopColor="#7c3aed"/>
+                  </linearGradient>
+                </defs>
+                <rect width="40" height="40" rx="11" fill="url(#footerLogoGrad)"/>
+                <rect x="9" y="10" width="22" height="4.5" rx="2.25" fill="white"/>
+                <rect x="9" y="10" width="5" height="20" rx="2.5" fill="white"/>
+                <rect x="26" y="10" width="5" height="20" rx="2.5" fill="white"/>
+              </svg>
               <span className="font-oswald font-bold text-xl gradient-brand-text">ПРОФАЙЛ</span>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed mb-4">
@@ -34,7 +43,7 @@ export default function Footer({ onNavigate }: FooterProps) {
               {[
                 { label: "Каталог объявлений", page: "catalog" as Page },
                 { label: "Вакансии и работа", page: "vacancies" as Page },
-                { label: "Бартер и обмен", page: "barter" as Page },
+                { label: "Потеряшки", page: "lost" as Page },
                 { label: "Избранное", page: "saved" as Page },
                 { label: "Личный кабинет", page: "profile" as Page },
               ].map(item => (

@@ -11,7 +11,7 @@ const NAV_ITEMS: { id: Page; label: string; icon: string }[] = [
   { id: "home", label: "Главная", icon: "Home" },
   { id: "catalog", label: "Каталог", icon: "Grid3X3" },
   { id: "vacancies", label: "Работа", icon: "Briefcase" },
-  { id: "barter", label: "Бартер", icon: "ArrowLeftRight" },
+  { id: "lost", label: "Потеряшки", icon: "SearchX" },
   { id: "saved", label: "Избранное", icon: "Heart" },
   { id: "support", label: "Поддержка", icon: "LifeBuoy" },
 ];

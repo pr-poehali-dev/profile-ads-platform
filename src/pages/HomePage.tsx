@@ -180,24 +180,24 @@ export default function HomePage({ onNavigate }: HomePageProps) {
             </div>
           </div>
 
-          {/* Barter promo */}
+          {/* Lost promo */}
           <div
             className="card-hover relative overflow-hidden rounded-2xl cursor-pointer"
-            onClick={() => onNavigate("barter")}
+            onClick={() => onNavigate("lost")}
           >
             <img
-              src="https://cdn.poehali.dev/projects/3ac61a67-957b-4eea-9bad-bb8823ae7707/files/09d1447c-75e2-4a5c-8476-36750fa330fd.jpg"
-              alt="Бартер"
+              src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=800&q=80"
+              alt="Потеряшки"
               className="w-full h-52 object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-orange-900/90 to-orange-800/40 flex flex-col justify-center px-8">
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 to-slate-800/50 flex flex-col justify-center px-8">
               <span className="badge-category bg-orange-400/30 text-white w-fit mb-3 text-xs border border-orange-300/30">
-                Обмен без денег
+                130+ объявлений
               </span>
-              <h3 className="font-oswald font-bold text-white text-2xl uppercase mb-1">Бартер и обмен</h3>
-              <p className="text-white/70 text-sm mb-4">Обменяйтесь вещами с жителями области</p>
+              <h3 className="font-oswald font-bold text-white text-2xl uppercase mb-1">Потеряшки</h3>
+              <p className="text-white/70 text-sm mb-4">Потерялись или нашли питомца, вещь?</p>
               <span className="flex items-center gap-2 text-white font-semibold text-sm">
-                Найти обмен <Icon name="ArrowRight" size={16} />
+                Смотреть объявления <Icon name="ArrowRight" size={16} />
               </span>
             </div>
           </div>
