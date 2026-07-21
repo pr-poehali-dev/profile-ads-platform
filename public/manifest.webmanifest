@@ -1,16 +1,16 @@
 {
-  "name": "Профайл — доска объявлений",
-  "short_name": "Профайл",
+  "name": "Левша — доска объявлений",
+  "short_name": "Левша",
   "description": "Доска объявлений Иркутской области",
   "theme_color": "#f97316",
-  "background_color": "#111827",
+  "background_color": "#1f1206",
   "display": "standalone",
   "start_url": "/",
   "lang": "ru",
   "orientation": "portrait",
   "icons": [
     {
-      "src": "https://cdn.poehali.dev/projects/3ac61a67-957b-4eea-9bad-bb8823ae7707/files/1387c717-cbcf-4cbb-914e-b9cb421cccd4.jpg",
+      "src": "https://cdn.poehali.dev/projects/3ac61a67-957b-4eea-9bad-bb8823ae7707/files/6f10c7c8-7752-4f3b-aa92-71aba267a338.jpg",
       "sizes": "512x512",
       "type": "image/jpeg",
       "purpose": "any maskable"

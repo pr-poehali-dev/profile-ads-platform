@@ -10,7 +10,7 @@ const TYPE_LABELS: Record<string, string> = {
 };
 
 const TYPE_COLORS: Record<string, string> = {
-  full: "bg-green-100 text-green-700",
+  full: "bg-orange-100 text-orange-700",
   part: "bg-blue-100 text-blue-700",
   remote: "bg-purple-100 text-purple-700",
   contract: "bg-amber-100 text-amber-700",

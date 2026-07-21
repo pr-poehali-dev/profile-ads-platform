@@ -158,7 +158,7 @@ export default function LostPage() {
         >
           <Icon name="Search" size={15} />
           Нашли
-          <span className={`text-xs px-1.5 py-0.5 rounded-full font-semibold ${tab === "found" ? "bg-green-100 text-green-600" : "bg-border text-muted-foreground"}`}>
+          <span className={`text-xs px-1.5 py-0.5 rounded-full font-semibold ${tab === "found" ? "bg-orange-100 text-orange-600" : "bg-border text-muted-foreground"}`}>
             {LOST_ITEMS.filter(i => i.type === "found").length}
           </span>
         </button>
@@ -183,7 +183,7 @@ export default function LostPage() {
               <span className={`absolute top-3 right-3 text-xs font-semibold px-2.5 py-1 rounded-full ${
                 item.type === "lost"
                   ? "bg-red-500/90 text-white"
-                  : "bg-green-500/90 text-white"
+                  : "bg-orange-500/90 text-white"
               }`}>
                 {item.type === "lost" ? "Потеряли" : "Нашли"}
               </span>

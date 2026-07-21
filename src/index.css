@@ -13,32 +13,32 @@
     --popover: 0 0% 100%;
     --popover-foreground: 220 20% 12%;
 
-    --primary: 142 72% 35%;
+    --primary: 25 95% 53%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 50 98% 48%;
+    --secondary: 45 97% 50%;
     --secondary-foreground: 30 30% 15%;
 
-    --muted: 120 12% 93%;
-    --muted-foreground: 130 8% 45%;
+    --muted: 30 20% 94%;
+    --muted-foreground: 30 8% 45%;
 
-    --accent: 142 72% 35%;
+    --accent: 25 95% 53%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 120 12% 87%;
-    --input: 120 12% 87%;
-    --ring: 142 72% 35%;
+    --border: 30 16% 87%;
+    --input: 30 16% 87%;
+    --ring: 25 95% 53%;
 
     --radius: 0.75rem;
 
     /* Brand */
-    --brand-orange: 142 72% 35%;
-    --brand-purple: 50 98% 48%;
-    --brand-pink: 165 60% 45%;
-    --brand-teal: 142 72% 35%;
+    --brand-orange: 25 95% 53%;
+    --brand-purple: 45 97% 50%;
+    --brand-pink: 38 92% 50%;
+    --brand-teal: 25 95% 53%;
   }
 }
 
@@ -71,16 +71,16 @@
   .gradient-brand {
     background: linear-gradient(
       135deg,
-      hsl(142 72% 30%) 0%,
-      hsl(142 65% 42%) 100%
+      hsl(25 95% 48%) 0%,
+      hsl(45 97% 50%) 100%
     );
   }
 
   .gradient-brand-text {
     background: linear-gradient(
       135deg,
-      hsl(142 72% 28%) 0%,
-      hsl(155 60% 38%) 100%
+      hsl(20 90% 45%) 0%,
+      hsl(45 97% 45%) 100%
     );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -88,7 +88,7 @@
   }
 
   .gradient-hero {
-    background: linear-gradient(135deg, #0d2b1a 0%, #1a4a25 40%, #2d5a10 100%);
+    background: linear-gradient(135deg, #4a1d0a 0%, #a3450f 40%, #d97706 100%);
   }
 
   .card-hover {
@@ -129,7 +129,7 @@
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, hsl(142 72% 30%), hsl(50 98% 48%));
+    background: linear-gradient(90deg, hsl(25 95% 48%), hsl(45 97% 50%));
     transition: width 0.25s ease;
     border-radius: 2px;
   }
@@ -138,19 +138,19 @@
     width: 100%;
   }
   .nav-link.active {
-    color: hsl(142 72% 30%);
+    color: hsl(25 95% 45%);
   }
 
   .filter-chip {
     @apply px-4 py-2 rounded-full text-sm font-medium border transition-all duration-200 cursor-pointer;
   }
   .filter-chip.active {
-    background: linear-gradient(135deg, hsl(142 72% 30%), hsl(142 65% 42%));
+    background: linear-gradient(135deg, hsl(25 95% 48%), hsl(45 97% 50%));
     color: white;
     border-color: transparent;
   }
   .filter-chip:not(.active) {
-    @apply bg-white border-border hover:border-green-600 hover:text-green-700;
+    @apply bg-white border-border hover:border-orange-500 hover:text-orange-600;
   }
 
   @keyframes fade-in {

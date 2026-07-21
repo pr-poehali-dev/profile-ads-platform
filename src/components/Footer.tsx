@@ -1,5 +1,6 @@
 import { Page } from "@/App";
 import Icon from "@/components/ui/icon";
+import Logo from "@/components/Logo";
 
 interface FooterProps {
   onNavigate: (page: Page) => void;
@@ -13,19 +14,8 @@ export default function Footer({ onNavigate }: FooterProps) {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2.5 mb-4">
-              <svg width="36" height="36" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <linearGradient id="footerLogoGrad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stopColor="#166534"/>
-                    <stop offset="100%" stopColor="#16a34a"/>
-                  </linearGradient>
-                </defs>
-                <rect width="40" height="40" rx="11" fill="url(#footerLogoGrad)"/>
-                <rect x="9" y="10" width="22" height="4.5" rx="2.25" fill="white"/>
-                <rect x="9" y="10" width="5" height="20" rx="2.5" fill="white"/>
-                <rect x="26" y="10" width="5" height="20" rx="2.5" fill="white"/>
-              </svg>
-              <span className="font-oswald font-bold text-xl gradient-brand-text">ПРОФАЙЛ</span>
+              <Logo size={36} />
+              <span className="font-oswald font-bold text-xl gradient-brand-text">ЛЕВША</span>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed mb-4">
               Главная доска объявлений Иркутской области. Продавайте, покупайте, обменивайтесь и находите работу.
@@ -86,7 +76,7 @@ export default function Footer({ onNavigate }: FooterProps) {
               </li>
               <li className="flex items-start gap-2 text-sm text-gray-400">
                 <Icon name="Mail" size={14} className="text-orange-400 mt-0.5 shrink-0" />
-                <span>info@profile38.ru</span>
+                <span>info@levsha38.ru</span>
               </li>
               <li className="flex items-start gap-2 text-sm text-gray-400">
                 <Icon name="Clock" size={14} className="text-orange-400 mt-0.5 shrink-0" />
@@ -104,7 +94,7 @@ export default function Footer({ onNavigate }: FooterProps) {
         </div>
 
         <div className="mt-10 pt-6 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-gray-500">© 2024 Профайл. Все права защищены.</p>
+          <p className="text-xs text-gray-500">© 2024 Левша. Все права защищены.</p>
           <div className="flex items-center gap-4 text-xs text-gray-500">
             <button className="hover:text-gray-300 transition-colors">Политика конфиденциальности</button>
             <button className="hover:text-gray-300 transition-colors">Правила использования</button>

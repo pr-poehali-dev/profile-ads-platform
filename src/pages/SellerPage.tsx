@@ -68,7 +68,7 @@ export default function SellerPage({ onNavigate }: SellerPageProps) {
             <div className="w-24 h-24 gradient-brand rounded-2xl flex items-center justify-center shadow-lg">
               <span className="font-oswald font-bold text-5xl text-white">А</span>
             </div>
-            <div className="absolute -bottom-1.5 -right-1.5 w-7 h-7 bg-green-500 border-2 border-white rounded-full flex items-center justify-center" title="Онлайн">
+            <div className="absolute -bottom-1.5 -right-1.5 w-7 h-7 bg-orange-500 border-2 border-white rounded-full flex items-center justify-center" title="Онлайн">
               <div className="w-2.5 h-2.5 bg-white rounded-full" />
             </div>
           </div>
@@ -76,7 +76,7 @@ export default function SellerPage({ onNavigate }: SellerPageProps) {
           <div className="flex-1 text-center sm:text-left">
             <h1 className="font-oswald font-bold text-2xl text-foreground mb-0.5">Алексей Петров</h1>
             <div className="flex items-center gap-2 justify-center sm:justify-start mb-3">
-              <Icon name="MapPin" size={13} className="text-green-600" />
+              <Icon name="MapPin" size={13} className="text-orange-600" />
               <span className="text-sm text-muted-foreground">Иркутск</span>
               <span className="text-muted-foreground/40">•</span>
               <span className="text-xs text-muted-foreground">На сайте с марта 2024</span>
@@ -100,8 +100,8 @@ export default function SellerPage({ onNavigate }: SellerPageProps) {
               { icon: "Clock", value: "~1ч", label: "Ответ" },
             ].map(s => (
               <div key={s.label}>
-                <div className="w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center mx-auto mb-1">
-                  <Icon name={s.icon} size={18} className="text-green-600" />
+                <div className="w-10 h-10 rounded-xl bg-orange-50 flex items-center justify-center mx-auto mb-1">
+                  <Icon name={s.icon} size={18} className="text-orange-600" />
                 </div>
                 <div className="font-oswald font-bold text-xl gradient-brand-text">{s.value}</div>
                 <div className="text-xs text-muted-foreground">{s.label}</div>
@@ -160,12 +160,12 @@ export default function SellerPage({ onNavigate }: SellerPageProps) {
             <h2 className="font-oswald font-bold text-xl uppercase mb-4">Оставить отзыв</h2>
             {submitted ? (
               <div className="text-center py-6">
-                <div className="w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-3">
-                  <Icon name="CheckCircle2" size={28} className="text-green-600" />
+                <div className="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                  <Icon name="CheckCircle2" size={28} className="text-orange-600" />
                 </div>
                 <p className="font-semibold text-foreground mb-1">Отзыв опубликован!</p>
                 <p className="text-sm text-muted-foreground">Спасибо за честную оценку</p>
-                <button onClick={() => setSubmitted(false)} className="mt-3 text-sm text-green-600 hover:underline">
+                <button onClick={() => setSubmitted(false)} className="mt-3 text-sm text-orange-600 hover:underline">
                   Написать ещё
                 </button>
               </div>
@@ -189,7 +189,7 @@ export default function SellerPage({ onNavigate }: SellerPageProps) {
                     placeholder="Расскажите о своём опыте с этим продавцом..."
                     value={reviewText}
                     onChange={e => setReviewText(e.target.value)}
-                    className="w-full px-3 py-2.5 text-sm border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500/30 focus:border-green-600 resize-none transition-all"
+                    className="w-full px-3 py-2.5 text-sm border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500/30 focus:border-orange-500 resize-none transition-all"
                   />
                 </div>
                 <button
@@ -218,7 +218,7 @@ export default function SellerPage({ onNavigate }: SellerPageProps) {
                       <div className="flex items-center gap-1.5">
                         <span className="font-semibold text-sm text-foreground">{r.author}</span>
                         {r.verified && (
-                          <span className="text-[10px] bg-green-100 text-green-700 font-semibold px-1.5 py-0.5 rounded-full flex items-center gap-0.5">
+                          <span className="text-[10px] bg-orange-100 text-orange-700 font-semibold px-1.5 py-0.5 rounded-full flex items-center gap-0.5">
                             <Icon name="BadgeCheck" size={10} />
                             Проверен
                           </span>

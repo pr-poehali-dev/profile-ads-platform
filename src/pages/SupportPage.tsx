@@ -30,7 +30,7 @@ export default function SupportPage() {
           {[
             { icon: "Phone", title: "Телефон", value: "+7 (3952) 00-00-00", note: "Пн–Пт: 9:00–20:00", color: "bg-blue-100 text-blue-600" },
             { icon: "Mail", title: "Email", value: "help@profile38.ru", note: "Ответим за 24 часа", color: "bg-purple-100 text-purple-600" },
-            { icon: "MessageSquare", title: "Чат", value: "Онлайн-чат", note: "Сейчас онлайн", color: "bg-green-100 text-green-600" },
+            { icon: "MessageSquare", title: "Чат", value: "Онлайн-чат", note: "Сейчас онлайн", color: "bg-orange-100 text-orange-600" },
           ].map(contact => (
             <div key={contact.title} className="card-hover bg-white border border-border rounded-2xl p-5 text-center cursor-pointer">
               <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-3 ${contact.color}`}>
@@ -77,8 +77,8 @@ export default function SupportPage() {
             <div className="bg-white border border-border rounded-2xl p-6">
               {sent ? (
                 <div className="text-center py-8">
-                  <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <Icon name="CheckCircle2" size={32} className="text-green-500" />
+                  <div className="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <Icon name="CheckCircle2" size={32} className="text-orange-500" />
                   </div>
                   <h3 className="font-oswald font-bold text-xl text-foreground mb-2">Обращение отправлено!</h3>
                   <p className="text-muted-foreground text-sm">Мы ответим на ваш вопрос в течение 24 часов</p>

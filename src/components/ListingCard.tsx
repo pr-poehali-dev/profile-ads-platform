@@ -18,7 +18,7 @@ const CATEGORY_COLORS: Record<string, string> = {
   electronics: "bg-blue-100 text-blue-700",
   furniture: "bg-amber-100 text-amber-700",
   clothes: "bg-pink-100 text-pink-700",
-  transport: "bg-green-100 text-green-700",
+  transport: "bg-orange-100 text-orange-700",
   realty: "bg-purple-100 text-purple-700",
   services: "bg-teal-100 text-teal-700",
   barter: "bg-orange-100 text-orange-700",
@@ -90,7 +90,7 @@ export default function ListingCard({ listing, onSellerClick }: ListingCardProps
         </div>
         <div className="flex items-center justify-between mt-2 text-xs text-muted-foreground">
           <span className="flex items-center gap-1">
-            <Icon name="MapPin" size={11} className="text-green-600" />
+            <Icon name="MapPin" size={11} className="text-orange-600" />
             {listing.location}
           </span>
           <span>{listing.date}</span>
@@ -101,7 +101,7 @@ export default function ListingCard({ listing, onSellerClick }: ListingCardProps
           <div className="flex items-center justify-between mt-2.5 pt-2.5 border-t border-border">
             <button
               onClick={e => { e.stopPropagation(); onSellerClick?.(); }}
-              className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-green-700 transition-colors group/seller"
+              className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-orange-700 transition-colors group/seller"
             >
               <div className="w-5 h-5 rounded-full gradient-brand flex items-center justify-center shrink-0">
                 <span className="text-white text-[9px] font-bold">{listing.seller[0]}</span>

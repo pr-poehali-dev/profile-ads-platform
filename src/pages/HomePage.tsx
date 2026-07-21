@@ -4,6 +4,7 @@ import { LISTINGS, CATEGORIES } from "@/data/listings";
 import ListingCard from "@/components/ListingCard";
 import Icon from "@/components/ui/icon";
 import AdRequestModal from "@/components/AdRequestModal";
+import Logo from "@/components/Logo";
 
 const AD_BANNERS_URL = "https://functions.poehali.dev/35905cb1-28ca-4992-aa49-ac10ddaa9758";
 
@@ -61,19 +62,8 @@ export default function HomePage({ onNavigate }: HomePageProps) {
 
             {/* Hero logo wordmark */}
             <div className="flex items-center justify-center gap-4 mb-5 animate-fade-in stagger-1">
-              <svg width="52" height="52" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <linearGradient id="heroLogoGrad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stopColor="#166534"/>
-                    <stop offset="100%" stopColor="#16a34a"/>
-                  </linearGradient>
-                </defs>
-                <rect width="40" height="40" rx="11" fill="white" opacity="0.15"/>
-                <rect x="9" y="10" width="22" height="4.5" rx="2.25" fill="white"/>
-                <rect x="9" y="10" width="5" height="20" rx="2.5" fill="white"/>
-                <rect x="26" y="10" width="5" height="20" rx="2.5" fill="white"/>
-              </svg>
-              <span className="font-oswald font-bold text-5xl sm:text-6xl text-white tracking-wide leading-none">ПРОФАЙЛ</span>
+              <Logo size={52} light className="text-orange-500" />
+              <span className="font-oswald font-bold text-5xl sm:text-6xl text-white tracking-wide leading-none">ЛЕВША</span>
             </div>
             <p className="text-white/70 text-lg mb-8 animate-fade-in stagger-2">
               Продавайте, покупайте, ищите работу и обменивайтесь — всё в одном месте для жителей Иркутской области

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Icon from "@/components/ui/icon";
+import Logo from "@/components/Logo";
 
 interface AuthModalProps {
   onClose: () => void;
@@ -37,13 +38,8 @@ export default function AuthModal({ onClose, onLogin }: AuthModalProps) {
           <div className="relative flex items-center justify-between">
             <div>
               <div className="flex items-center gap-2 mb-1">
-                <svg width="28" height="28" viewBox="0 0 40 40" fill="none">
-                  <rect width="40" height="40" rx="10" fill="white" fillOpacity="0.2"/>
-                  <rect x="9" y="10" width="22" height="4.5" rx="2.25" fill="white"/>
-                  <rect x="9" y="10" width="5" height="20" rx="2.5" fill="white"/>
-                  <rect x="26" y="10" width="5" height="20" rx="2.5" fill="white"/>
-                </svg>
-                <span className="font-oswald font-bold text-white text-lg tracking-wide">ПРОФАЙЛ</span>
+                <Logo size={28} light />
+                <span className="font-oswald font-bold text-white text-lg tracking-wide">ЛЕВША</span>
               </div>
               <p className="text-white/70 text-xs">
                 {tab === "login" ? "Войдите в свой аккаунт" : "Создайте новый аккаунт"}
@@ -62,7 +58,7 @@ export default function AuthModal({ onClose, onLogin }: AuthModalProps) {
             <button
               onClick={() => setTab("login")}
               className={`flex-1 py-2 rounded-lg text-sm font-semibold transition-all ${
-                tab === "login" ? "bg-white text-green-700 shadow" : "text-white/80 hover:text-white"
+                tab === "login" ? "bg-white text-orange-700 shadow" : "text-white/80 hover:text-white"
               }`}
             >
               Войти
@@ -70,7 +66,7 @@ export default function AuthModal({ onClose, onLogin }: AuthModalProps) {
             <button
               onClick={() => setTab("register")}
               className={`flex-1 py-2 rounded-lg text-sm font-semibold transition-all ${
-                tab === "register" ? "bg-white text-green-700 shadow" : "text-white/80 hover:text-white"
+                tab === "register" ? "bg-white text-orange-700 shadow" : "text-white/80 hover:text-white"
               }`}
             >
               Регистрация
@@ -90,7 +86,7 @@ export default function AuthModal({ onClose, onLogin }: AuthModalProps) {
                   placeholder="Ваше имя"
                   value={name}
                   onChange={e => setName(e.target.value)}
-                  className="w-full pl-9 pr-4 py-2.5 text-sm border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500/30 focus:border-green-500 transition-all"
+                  className="w-full pl-9 pr-4 py-2.5 text-sm border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500/30 focus:border-orange-500 transition-all"
                 />
               </div>
             </div>
@@ -105,7 +101,7 @@ export default function AuthModal({ onClose, onLogin }: AuthModalProps) {
                 placeholder="your@email.ru"
                 value={email}
                 onChange={e => setEmail(e.target.value)}
-                className="w-full pl-9 pr-4 py-2.5 text-sm border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500/30 focus:border-green-500 transition-all"
+                className="w-full pl-9 pr-4 py-2.5 text-sm border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500/30 focus:border-orange-500 transition-all"
               />
             </div>
           </div>
@@ -119,7 +115,7 @@ export default function AuthModal({ onClose, onLogin }: AuthModalProps) {
                 placeholder="••••••••"
                 value={password}
                 onChange={e => setPassword(e.target.value)}
-                className="w-full pl-9 pr-10 py-2.5 text-sm border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500/30 focus:border-green-500 transition-all"
+                className="w-full pl-9 pr-10 py-2.5 text-sm border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500/30 focus:border-orange-500 transition-all"
               />
               <button
                 type="button"
@@ -132,7 +128,7 @@ export default function AuthModal({ onClose, onLogin }: AuthModalProps) {
           </div>
 
           {tab === "login" && (
-            <button className="text-xs text-green-600 hover:text-green-700 text-right -mt-2 font-medium transition-colors">
+            <button className="text-xs text-orange-600 hover:text-orange-700 text-right -mt-2 font-medium transition-colors">
               Забыли пароль?
             </button>
           )}
@@ -158,7 +154,7 @@ export default function AuthModal({ onClose, onLogin }: AuthModalProps) {
 
           <p className="text-center text-xs text-muted-foreground mt-1">
             Регистрируясь, вы соглашаетесь с{" "}
-            <button className="text-green-600 hover:underline">правилами сайта</button>
+            <button className="text-orange-600 hover:underline">правилами сайта</button>
           </p>
         </div>
       </div>

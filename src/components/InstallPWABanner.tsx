@@ -56,13 +56,13 @@ export default function InstallPWABanner() {
       <div className="bg-gray-900 border border-orange-500/30 rounded-2xl shadow-2xl p-4 flex items-start gap-3">
         <div className="flex-shrink-0 w-12 h-12 rounded-xl overflow-hidden">
           <img
-            src="https://cdn.poehali.dev/projects/3ac61a67-957b-4eea-9bad-bb8823ae7707/files/1387c717-cbcf-4cbb-914e-b9cb421cccd4.jpg"
-            alt="Профайл"
+            src="https://cdn.poehali.dev/projects/3ac61a67-957b-4eea-9bad-bb8823ae7707/files/6f10c7c8-7752-4f3b-aa92-71aba267a338.jpg"
+            alt="Левша"
             className="w-full h-full object-cover"
           />
         </div>
         <div className="flex-1 min-w-0">
-          <p className="text-white font-semibold text-sm">Установить Профайл</p>
+          <p className="text-white font-semibold text-sm">Установить Левша</p>
           {isIOS ? (
             <p className="text-gray-400 text-xs mt-0.5">
               Нажмите <Icon name="Share" size={12} className="inline mx-0.5 text-blue-400" /> в браузере, затем «На экран домой»

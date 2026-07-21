@@ -71,8 +71,8 @@ export default function AdRequestModal({ onClose }: AdRequestModalProps) {
 
         {success ? (
           <div className="text-center py-8">
-            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Icon name="CheckCircle" size={32} className="text-green-600" />
+            <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Icon name="CheckCircle" size={32} className="text-orange-600" />
             </div>
             <h3 className="font-oswald font-bold text-xl mb-2">Заявка отправлена!</h3>
             <p className="text-muted-foreground text-sm mb-6">Мы получили вашу заявку и свяжемся с вами в ближайшее время.</p>

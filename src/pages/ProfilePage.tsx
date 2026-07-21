@@ -39,7 +39,7 @@ export default function ProfilePage({ onNavigate, user, onLogout }: ProfilePageP
           <div className="flex-1 text-center sm:text-left">
             <h1 className="font-oswald font-bold text-2xl text-foreground">{displayName}</h1>
             <p className="text-muted-foreground text-sm mt-0.5 flex items-center gap-1.5 justify-center sm:justify-start">
-              <Icon name="MapPin" size={13} className="text-green-600" />
+              <Icon name="MapPin" size={13} className="text-orange-600" />
               Иркутск
             </p>
             <div className="flex items-center gap-4 mt-3 justify-center sm:justify-start flex-wrap">
@@ -48,7 +48,7 @@ export default function ProfilePage({ onNavigate, user, onLogout }: ProfilePageP
                 <span className="font-semibold text-sm text-amber-600">4.8</span>
                 <button
                   onClick={() => onNavigate("seller")}
-                  className="text-xs text-muted-foreground hover:text-green-600 transition-colors"
+                  className="text-xs text-muted-foreground hover:text-orange-600 transition-colors"
                 >(24 отзыва)</button>
               </div>
               <div className="text-xs text-muted-foreground">На сайте с марта 2024</div>
@@ -134,7 +134,7 @@ export default function ProfilePage({ onNavigate, user, onLogout }: ProfilePageP
                 </div>
                 <div className="flex flex-col gap-2 shrink-0">
                   <span className={`text-[11px] font-semibold px-2.5 py-1 rounded-full ${
-                    listing.isNew ? "bg-green-100 text-green-700" : "bg-muted text-muted-foreground"
+                    listing.isNew ? "bg-orange-100 text-orange-700" : "bg-muted text-muted-foreground"
                   }`}>
                     {listing.isNew ? "Активно" : "Обычное"}
                   </span>

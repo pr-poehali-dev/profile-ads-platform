@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Page, User } from "@/App";
 import Icon from "@/components/ui/icon";
+import Logo from "@/components/Logo";
 
 interface HeaderProps {
   currentPage: Page;
@@ -37,21 +38,10 @@ export default function Header({ currentPage, onNavigate, user, onOpenAuth }: He
             className="flex items-center gap-2.5 shrink-0 group"
           >
             <div className="relative w-10 h-10 shrink-0">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <linearGradient id="logoGrad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stopColor="#166534"/>
-                    <stop offset="100%" stopColor="#16a34a"/>
-                  </linearGradient>
-                </defs>
-                <rect width="40" height="40" rx="11" fill="url(#logoGrad)"/>
-                <rect x="9" y="10" width="22" height="4.5" rx="2.25" fill="white"/>
-                <rect x="9" y="10" width="5" height="20" rx="2.5" fill="white"/>
-                <rect x="26" y="10" width="5" height="20" rx="2.5" fill="white"/>
-              </svg>
+              <Logo size={40} />
             </div>
             <div className="hidden sm:flex flex-col leading-none">
-              <span className="font-oswald font-bold text-[22px] tracking-wide gradient-brand-text leading-none">ПРОФАЙЛ</span>
+              <span className="font-oswald font-bold text-[22px] tracking-wide gradient-brand-text leading-none">ЛЕВША</span>
               <span className="text-[10px] text-muted-foreground tracking-widest uppercase mt-0.5 font-medium">Иркутская область</span>
             </div>
           </button>
@@ -63,7 +53,7 @@ export default function Header({ currentPage, onNavigate, user, onOpenAuth }: He
               value={searchVal}
               onChange={e => setSearchVal(e.target.value)}
               placeholder="Поиск объявлений..."
-              className="w-full pl-9 pr-4 py-2.5 rounded-xl border border-border bg-muted/40 text-sm focus:outline-none focus:ring-2 focus:ring-green-500/30 focus:border-green-600 transition-all"
+              className="w-full pl-9 pr-4 py-2.5 rounded-xl border border-border bg-muted/40 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500/30 focus:border-orange-500 transition-all"
             />
           </div>
 
@@ -96,7 +86,7 @@ export default function Header({ currentPage, onNavigate, user, onOpenAuth }: He
                 onClick={onOpenAuth}
                 className="flex items-center gap-2 px-3 py-2 rounded-xl border border-border hover:bg-muted transition-colors text-sm font-semibold text-foreground"
               >
-                <Icon name="LogIn" size={16} className="text-green-600" />
+                <Icon name="LogIn" size={16} className="text-orange-600" />
                 <span className="hidden sm:block">Войти</span>
               </button>
             )}
@@ -124,7 +114,7 @@ export default function Header({ currentPage, onNavigate, user, onOpenAuth }: He
               onClick={() => onNavigate(item.id)}
               className={`nav-link flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm transition-colors ${
                 currentPage === item.id
-                  ? "active text-green-700 bg-green-50"
+                  ? "active text-orange-700 bg-orange-50"
                   : "text-muted-foreground hover:text-foreground hover:bg-muted/60"
               }`}
             >
@@ -133,7 +123,7 @@ export default function Header({ currentPage, onNavigate, user, onOpenAuth }: He
             </button>
           ))}
           <div className="ml-auto flex items-center gap-2 text-xs text-muted-foreground">
-            <Icon name="MapPin" size={13} className="text-green-600" />
+            <Icon name="MapPin" size={13} className="text-orange-600" />
             <span>Иркутская область</span>
           </div>
         </nav>
@@ -170,7 +160,7 @@ export default function Header({ currentPage, onNavigate, user, onOpenAuth }: He
             ) : (
               <button
                 onClick={() => { setMobileOpen(false); setTimeout(() => (document.querySelector("[data-auth-trigger]") as HTMLElement)?.click(), 100); }}
-                className="mt-2 flex items-center justify-center gap-2 border border-green-600 text-green-700 font-semibold py-3 rounded-xl hover:bg-green-50 transition-colors"
+                className="mt-2 flex items-center justify-center gap-2 border border-orange-500 text-orange-700 font-semibold py-3 rounded-xl hover:bg-orange-50 transition-colors"
               >
                 <Icon name="LogIn" size={16} />
                 Войти / Зарегистрироваться

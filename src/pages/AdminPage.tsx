@@ -130,7 +130,7 @@ export default function AdminPage() {
                 <div className="flex gap-2 items-center">
                   <button
                     onClick={() => toggleActive(b)}
-                    className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${b.is_active ? "bg-green-100 text-green-700 hover:bg-green-200" : "bg-gray-100 text-gray-500 hover:bg-gray-200"}`}
+                    className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${b.is_active ? "bg-orange-100 text-orange-700 hover:bg-orange-200" : "bg-gray-100 text-gray-500 hover:bg-gray-200"}`}
                   >
                     {b.is_active ? "Активен" : "Выключен"}
                   </button>
@@ -193,7 +193,7 @@ export default function AdminPage() {
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 mb-1">
                   <span className="font-semibold text-sm">#{r.id} — {r.advertiser_name}</span>
-                  <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${r.status === "approved" ? "bg-green-100 text-green-700" : "bg-yellow-100 text-yellow-700"}`}>
+                  <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${r.status === "approved" ? "bg-orange-100 text-orange-700" : "bg-yellow-100 text-yellow-700"}`}>
                     {r.status === "approved" ? "Одобрена" : "Ожидает"}
                   </span>
                 </div>
