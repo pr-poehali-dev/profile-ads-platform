@@ -46,12 +46,11 @@ export default function HomePage({ onNavigate }: HomePageProps) {
       <section className="gradient-hero noise-bg relative overflow-hidden bg-orange-500">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <img
-            src="https://cdn.poehali.dev/projects/3ac61a67-957b-4eea-9bad-bb8823ae7707/bucket/04dc8801-4d2d-4677-af54-5dddc3d6cf5e.jpg"
+            src="https://cdn.poehali.dev/projects/3ac61a67-957b-4eea-9bad-bb8823ae7707/bucket/a9be153e-e9c3-4930-9681-ba2a43a0284a.jpg"
             alt=""
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-auto h-[130%] max-w-none object-contain opacity-40"
+            className="absolute inset-0 w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#4a1d0a]/95 via-[#7c2d12]/70 to-[#d97706]/50" />
-          <div className="absolute inset-0 backdrop-blur-[2px]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#4a1d0a]/70 via-[#7c2d12]/25 to-transparent" />
         </div>
 
         <div className="container mx-auto px-4 py-16 lg:py-24 relative">
