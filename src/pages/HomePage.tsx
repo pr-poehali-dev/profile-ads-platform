@@ -43,7 +43,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
   return (
     <div>
       {/* Hero */}
-      <section className="gradient-hero noise-bg relative overflow-hidden">
+      <section className="gradient-hero noise-bg relative overflow-hidden bg-orange-500">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <img
             src="https://cdn.poehali.dev/projects/3ac61a67-957b-4eea-9bad-bb8823ae7707/files/cf4bcebb-fbbf-4dd7-ad23-5aa626b4ece3.jpg"
