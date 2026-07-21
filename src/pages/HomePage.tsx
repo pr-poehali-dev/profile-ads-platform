@@ -46,22 +46,22 @@ export default function HomePage({ onNavigate }: HomePageProps) {
       <section className="gradient-hero noise-bg relative overflow-hidden bg-orange-500">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <img
-            src="https://cdn.poehali.dev/projects/3ac61a67-957b-4eea-9bad-bb8823ae7707/bucket/a9be153e-e9c3-4930-9681-ba2a43a0284a.jpg"
+            src="https://cdn.poehali.dev/projects/3ac61a67-957b-4eea-9bad-bb8823ae7707/bucket/3aa668b4-0a0b-4a7e-bb6e-17dc417a9728.jpg"
             alt=""
             className="absolute inset-0 w-full h-full object-cover"
+            style={{ objectPosition: "20% center" }}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#4a1d0a]/70 via-[#7c2d12]/25 to-transparent" />
         </div>
 
         <div className="container mx-auto px-4 py-16 lg:py-24 relative">
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="max-w-xl ml-auto mr-0 lg:mr-8 text-center lg:text-right">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 mb-6 animate-fade-in">
               <Icon name="MapPin" size={14} className="text-orange-400" />
               <span className="text-white/80 text-sm">Иркутская область</span>
             </div>
 
             {/* Hero logo wordmark */}
-            <div className="flex items-center justify-center gap-4 mb-5 animate-fade-in stagger-1">
+            <div className="flex items-center justify-center lg:justify-end gap-4 mb-5 animate-fade-in stagger-1">
               <Logo size={52} light className="text-orange-500" />
               <span className="font-oswald font-bold text-5xl sm:text-6xl text-white tracking-wide leading-none">ЛЕВША</span>
             </div>
@@ -70,7 +70,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
             </p>
 
             {/* Search hero */}
-            <div className="flex gap-2 bg-white rounded-2xl p-2 shadow-2xl max-w-2xl mx-auto animate-fade-in stagger-3 mb-8">
+            <div className="flex gap-2 bg-white rounded-2xl p-2 shadow-2xl max-w-2xl mx-auto lg:mr-0 animate-fade-in stagger-3 mb-8">
               <input
                 placeholder="Что ищете? Телефон, диван, работа..."
                 className="flex-1 px-4 py-2.5 text-sm bg-transparent focus:outline-none text-foreground placeholder:text-muted-foreground"
@@ -88,7 +88,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
             </div>
 
             {/* Quick categories */}
-            <div className="flex flex-wrap justify-center gap-2 animate-fade-in stagger-4">
+            <div className="flex flex-wrap justify-center lg:justify-end gap-2 animate-fade-in stagger-4">
               {CATEGORIES.slice(0, 6).map(cat => (
                 <button
                   key={cat.id}
