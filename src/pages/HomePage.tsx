@@ -79,6 +79,11 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                 <option>Иркутск</option>
                 <option>Ангарск</option>
                 <option>Братск</option>
+                <option>Усолье-Сибирское</option>
+                <option>Черемхово</option>
+                <option>Поселок Белореченский</option>
+                <option>Поселок Средний</option>
+                <option>Поселок Сосновка</option>
                 <option>Вся область</option>
               </select>
               <button className="gradient-brand text-white font-semibold px-5 py-2.5 rounded-xl hover:opacity-90 transition-opacity text-sm flex items-center gap-1.5 shadow-md">
